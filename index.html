@@ -1,271 +1,110 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Iffat Fatima — Software Developer</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PC Login System</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f2f5;
+      display: grid;
+      place-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .login-box {
+      background: white;
+      padding: 30px;
+      width: min(320px, 85vw);
+      border-radius: 12px;
+      box-shadow: 0 4px 18px #0002;
+    }
+
+    input, button {
+      box-sizing: border-box;
+      width: 100%;
+      padding: 12px;
+      margin-top: 12px;
+      border-radius: 6px;
+    }
+
+    input { border: 1px solid #ccc; }
+    button {
+      border: 0;
+      background: #1769e0;
+      color: white;
+      cursor: pointer;
+    }
+
+    #message { color: #c62828; }
+  </style>
 </head>
 <body>
+  <div class="login-box">
+    <h2>PC Login</h2>
+    <p>Enter your username and password.</p>
 
-<div class="noise"></div>
+    <form id="loginForm">
+      <input id="username" placeholder="Username"
+             autocomplete="username" required>
 
-<!-- ===== NAV ===== -->
-<header class="nav" id="nav">
-  <div class="nav-inner">
-    <a href="#home" class="nav-logo"><span class="brace">&lt;</span>Iffat<span class="brace">/&gt;</span></a>
-    <nav class="nav-links">
-      <a href="#home"><span class="tag">01</span>home</a>
-      <a href="#about"><span class="tag">02</span>about</a>
-      <a href="#skills"><span class="tag">03</span>skills</a>
-      <a href="#projects"><span class="tag">04</span>projects</a>
-      <a href="#contact"><span class="tag">05</span>contact</a>
-    </nav>
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</header>
+      <input id="password" type="password"
+             placeholder="Password"
+             autocomplete="current-password" required>
 
-<!-- ===== HOME / HERO ===== -->
-<section class="hero" id="home">
-  <div class="hero-grid">
-    <div class="hero-copy">
-      <p class="eyebrow">// aspiring software developer</p>
-      <h1 class="hero-title">
-        Iffat Fatima
-      </h1>
-      <p class="hero-sub">
-        I build clean, efficient, user-friendly web applications —
-        currently studying IT at Air University, Islamabad, and
-        looking for a software development internship.
-      </p>
-      <div class="hero-actions">
-        <a href="#projects" class="btn btn-primary">View Projects</a>
-        <a href="#contact" class="btn btn-ghost">Get In Touch</a>
-      </div>
-      <div class="hero-meta">
-        <span>Islamabad, Pakistan</span>
-        <span class="dot">•</span>
-        <span>BS Information Technology, 2024–2028</span>
-      </div>
-    </div>
-
-    <div class="hero-editor" aria-hidden="true">
-      <div class="editor-window">
-        <div class="editor-titlebar">
-          <span class="editor-dot red"></span>
-          <span class="editor-dot yellow"></span>
-          <span class="editor-dot green"></span>
-          <span class="editor-filename">about.js</span>
-        </div>
-        <div class="editor-body">
-          <pre><code><span class="ln">1</span><span class="tok-kw">const</span> <span class="tok-var">developer</span> <span class="tok-op">=</span> <span class="tok-punc">{</span>
-<span class="ln">2</span>  <span class="tok-prop">name</span><span class="tok-punc">:</span> <span class="tok-str">"Iffat Fatima"</span><span class="tok-punc">,</span>
-<span class="ln">3</span>  <span class="tok-prop">role</span><span class="tok-punc">:</span> <span class="tok-str">"Software Developer"</span><span class="tok-punc">,</span>
-<span class="ln">4</span>  <span class="tok-prop">stack</span><span class="tok-punc">:</span> <span class="tok-punc">[</span><span class="tok-str">"React"</span><span class="tok-punc">,</span> <span class="tok-str">"Angular"</span><span class="tok-punc">,</span> <span class="tok-str">"JS"</span><span class="tok-punc">]</span><span class="tok-punc">,</span>
-<span class="ln">5</span>  <span class="tok-prop">basedIn</span><span class="tok-punc">:</span> <span class="tok-str">"Islamabad"</span><span class="tok-punc">,</span>
-<span class="ln">6</span>  <span class="tok-prop">available</span><span class="tok-punc">:</span> <span class="tok-bool">true</span><span class="tok-punc">,</span>
-<span class="ln">7</span><span class="tok-punc">}</span><span class="tok-punc">;</span>
-<span class="ln">8</span>
-<span class="ln">9</span><span class="tok-comment">// let's build something great</span><span class="cursor">|</span></code></pre>
-        </div>
-      </div>
-    </div>
-  </div>
-  <a href="#about" class="scroll-cue" aria-label="Scroll down"><span></span></a>
-</section>
-
-<!-- ===== ABOUT ===== -->
-<section class="about" id="about">
-  <div class="section-head">
-    <p class="eyebrow">// about</p>
-    <h2>Who I am</h2>
-  </div>
-
-  <div class="about-grid">
-    <div class="about-text">
-      <p>
-        I'm an IT student and aspiring software developer with hands-on experience
-        in front-end and full-stack development using React and Angular, backed by
-        a solid foundation in HTML, CSS, JavaScript, and C++. I care about writing
-        clean, reusable code, using Git/GitHub properly for version control, and
-        seeing technical projects through end-to-end — not just the fun parts.
-      </p>
-      <p>
-        Outside of coding, I've led technical planning for university-wide events
-        and run my own small e-commerce business — so I bring project management
-        and communication skills alongside the code.
-      </p>
-    </div>
-
-    <div class="about-cards">
-      <article class="card">
-        <p class="card-tag">2024 — present</p>
-        <h3>Event Coordinator & Tech Lead</h3>
-        <p class="card-org">Air University – IT Society</p>
-        <p>Built the registration portal for "Air Nexus" with HTML, CSS &amp; JS,
-        cutting sign-up time and improving efficiency by 40%. Led technical
-        planning for 30+ volunteers and 200+ attendees.</p>
-      </article>
-
-      <article class="card">
-        <p class="card-tag">04/2024 — present</p>
-        <h3>Founder & Digital Operations Manager</h3>
-        <p class="card-org">@thriftsprinkles · Instagram, Remote</p>
-        <p>Run an e-commerce business end-to-end: content, orders, and customer
-        service. Used engagement/sales data to refine strategy, growing monthly
-        orders by 60% in six months.</p>
-      </article>
-
-      <article class="card">
-        <p class="card-tag">2024</p>
-        <h3>Orientation Volunteer</h3>
-        <p class="card-org">Air University</p>
-        <p>Supported new-student registration and onboarding logistics alongside
-        the administrative team.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- ===== SKILLS ===== -->
-<section class="skills" id="skills">
-  <div class="section-head">
-    <p class="eyebrow">// skills</p>
-    <h2>What I work with</h2>
-  </div>
-
-  <div class="skills-grid">
-    <div class="skill-block">
-      <h3><span class="skill-icon">01</span>Web Development</h3>
-      <div class="chips">
-        <span>HTML</span><span>CSS</span><span>JavaScript</span><span>React</span>
-        <span>Angular</span><span>Responsive UI</span><span>Clean Code</span>
-        <span>Reusable Components</span>
-      </div>
-    </div>
-
-    <div class="skill-block">
-      <h3><span class="skill-icon">02</span>Programming Fundamentals</h3>
-      <div class="chips">
-        <span>C++</span><span>OOP</span><span>File I/O</span>
-        <span>Data Structures</span><span>Problem Solving</span>
-      </div>
-    </div>
-
-    <div class="skill-block">
-      <h3><span class="skill-icon">03</span>Tools & Platforms</h3>
-      <div class="chips">
-        <span>VS Code</span><span>Android Studio</span><span>Postman</span>
-        <span>Git</span><span>GitHub</span><span>MS Excel</span>
-        <span>Google Workspace</span><span>Slack</span>
-      </div>
-    </div>
-
-    <div class="skill-block">
-      <h3><span class="skill-icon">04</span>Core Competencies</h3>
-      <div class="chips">
-        <span>Project Management</span><span>Teamwork</span>
-        <span>Time Management</span><span>Critical Thinking</span>
-        <span>Effective Communication</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== PROJECTS ===== -->
-<section class="projects" id="projects">
-  <div class="section-head">
-    <p class="eyebrow">// projects</p>
-    <h2>Things I've built</h2>
-  </div>
-
-  <div class="projects-list">
-    <article class="project">
-      <div class="project-index">P1</div>
-      <div class="project-body">
-        <h3>Personal Portfolio Web App</h3>
-        <p class="project-stack">React · CSS · JavaScript</p>
-        <p>A fully responsive portfolio website featuring project showcases,
-        animated transitions, and a functional contact form.</p>
-      </div>
-    </article>
-
-    <article class="project">
-      <div class="project-index">P2</div>
-      <div class="project-body">
-        <h3>Task Tracking Dashboard <span class="badge">Concept</span></h3>
-        <p class="project-stack">Angular · HTML · CSS</p>
-        <p>A prototype dashboard for tracking checklists, document submissions,
-        and process completion status — designed around clean UI and reusable
-        components.</p>
-      </div>
-    </article>
-
-    <article class="project">
-      <div class="project-index">P3</div>
-      <div class="project-body">
-        <h3>Hotel Management System</h3>
-        <p class="project-stack">C++ · Academic Project</p>
-        <p>A console-based hotel management system covering room booking,
-        billing, and customer record management, with file I/O persistence.</p>
-      </div>
-    </article>
-  </div>
-</section>
-
-<!-- ===== CONTACT ===== -->
-<section class="contact" id="contact">
-  <div class="contact-inner">
-    <p class="eyebrow">// contact</p>
-    <h2>Let's build something.</h2>
-    <p class="contact-sub">
-      Open to software development internships and collaboration.
-      Reach out any time — I reply fast.
-    </p>
-
-    <div class="contact-links">
-      <a href="mailto:fatimaiffat211@gmail.com" class="contact-item">
-        <span class="contact-label">email</span>
-        <span class="contact-value">fatimaiffat211@gmail.com</span>
-      </a>
-      <a href="tel:+923305072229" class="contact-item">
-        <span class="contact-label">phone</span>
-        <span class="contact-value">0330-5072229</span>
-      </a>
-      <div class="contact-item">
-        <span class="contact-label">location</span>
-        <span class="contact-value">Islamabad, Pakistan</span>
-      </div>
-    </div>
-
-    <form class="contact-form" id="contactForm">
-      <div class="form-row">
-        <label for="name">name</label>
-        <input type="text" id="name" name="name" placeholder="your name" required>
-      </div>
-      <div class="form-row">
-        <label for="email">email</label>
-        <input type="email" id="email" name="email" placeholder="your@email.com" required>
-      </div>
-      <div class="form-row">
-        <label for="message">message</label>
-        <textarea id="message" name="message" rows="4" placeholder="say hello..." required></textarea>
-      </div>
-      <button type="submit" class="btn btn-primary">Send Message</button>
-      <p class="form-note" id="formNote"></p>
+      <button type="submit">Login</button>
     </form>
+
+    <p id="message" role="status"></p>
   </div>
-</section>
 
-<footer class="footer">
-  <p>&copy; <span id="year"></span> Iffat Fatima. Built with HTML, CSS &amp; JS.</p>
-</footer>
+  <script>
+    // Already logged in? Open the dashboard.
+    fetch("/api/me")
+      .then(response => {
+        if (response.ok) {
+          location.replace("/dashboard.html");
+        }
+      });
 
-<script src="script.js"></script>
+    document.getElementById("loginForm")
+      .addEventListener("submit", async function(event) {
+        event.preventDefault();
+
+        const message = document.getElementById("message");
+        const button = this.querySelector("button");
+
+        message.textContent = "";
+        button.disabled = true;
+        button.textContent = "Checking...";
+
+        try {
+          const response = await fetch("/api/login", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              username: document.getElementById("username").value.trim(),
+              password: document.getElementById("password").value
+            })
+          });
+
+          const data = await response.json();
+
+          if (response.ok) {
+            location.replace("/dashboard.html");
+          } else {
+            message.textContent = data.error || "Login failed.";
+          }
+        } catch {
+          message.textContent = "Server error. Try again.";
+        } finally {
+          button.disabled = false;
+          button.textContent = "Login";
+        }
+      });
+  </script>
 </body>
 </html>
